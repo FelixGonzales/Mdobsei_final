@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <form action="control" method="POST">
+            <form action="controlador" method="POST">
             <div class="row">
                 <div class="col m12">
                     <div class="card blue white-text center z-depth-2">
@@ -23,11 +23,12 @@
                     </div>
                 </div>
             </div>
+                <input type="hidden" value="${base.id}" name="txtID" />
             <div class="row">
                 <div class="col m3"></div>
                 <div class="col m3">Codigo</div>
                 <div class="col m3">
-                    <input type="text" name="txtCodigo" required=""/>
+                    <input type="text" name="txtCodigo" value="${base.codigo_patrimonio}" required=""/>
                 </div>
             </div>
             
@@ -35,7 +36,31 @@
                 <div class="col m3"></div>
                 <div class="col m3">Orden Compra</div>
                 <div class="col m3">
-                    <input type="text" name="txtOrden" required=""/>
+                    <input type="text" name="txtOrden" value="${base.orden_compra}" required=""/>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col m3"></div>
+                <div class="col m3">Serie Numero</div>
+                <div class="col m3">
+                    <input type="text" name="txtSerie" value="${base.serie_numero}" required=""/>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col m3"></div>
+                <div class="col m3">Equipo</div>
+                <div class="col m3">
+                    <input type="text" name="txtNombre" value="${base.nombre_bien}" required=""/>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col m3"></div>
+                <div class="col m3">Marca</div>
+                <div class="col m3">
+                    <input type="text" name="txtMarca" value="${base.marca}" required=""/>
                 </div>
             </div>
             
@@ -44,9 +69,17 @@
                 <div class="col m3">Seleccione Estado</div>
                 <div class="col m3">
                     <select name="cmbEstado">
-                        <option value="">Seleccionar</option>
+                            <option value="">Seleccionar</option>
                         <c:forEach items="${estado}" var="es">
-                            <option value="${es.idestado}">${es.estado}</option>
+                            <c:choose>
+                                <c:when test="${es.idestado == base.estadodato.idestado}">
+                                     <option value="${es.idestado}" selected="">${es.estado}</option>
+                                </c:when>
+                                <c:otherwise>
+                                     <option value="${es.idestado}">${es.estado}</option>
+                                </c:otherwise>
+                            </c:choose>
+                           
                         </c:forEach>
                     </select>
                 </div>
