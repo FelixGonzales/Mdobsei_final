@@ -1,6 +1,6 @@
 <%-- 
-    Document   : login
-    Created on : Oct 26, 2021, 8:48:23 PM
+    Document   : index
+    Created on : Nov 3, 2021, 3:23:01 PM
     Author     : srf
 --%>
 
@@ -9,48 +9,45 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        
-        
-        <title>MDOBSEI</title>
+        <title>LOGIN</title>
+            <link href="resource/css/materialize.css" rel="stylesheet" type="text/css"/>
+         <link rel="stylesheet" href="resource/css/login.css">
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-         <div class="container mt-4 col-lg-4">
-            <div class="card col-sm-10">
-                <div class="card-body ">
-                    <form class="form-sign" action="validar" method="POST">
-                        <div class="form-group text-center">
-                            <h3> Login </h3>
-                            <img src="img/usuario2.png" alt="70" width="170"/>
+        <div class="main">
+            <div class="col s3 m6">
+                <form action="ControladorLogin" method="POST">
+                    <div class="card horizontal">
+                        <div class="card-image cardLogo">
+                            <h5 class="header center">LOGIN</h5>
+                            <img src="" class="logo">
                         </div>
-                        
-                        <div class="form-group text-center">
-                            <label> Bienvenido al Sistema MDOBSEI</label>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <p class="red-text">${msjU}</p>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">contact_mail</i>
+                                    <input type="text" name="email" class="validate" placeholder="Email">
+                                </div>
+                                
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">lock</i>
+                                    <input type="password" name="password" class="validate" placeholder="Password">
+                                    <p class="red-text">${msjP}</p>
+                                </div>
+                                
+                            </div>
+                                
+                            <div class="card-action right">
+                                   <p class="red-text">${msjT}</p>
+                                <button type="submit" class="btn" name="accion" value="Ingresar">Iniciar Sesion</button>
+                            </div>
                         </div>
-                        
-                        <div class="form-group">
-                             <label>Usuario:</label>
-                             <input type="text" name="txtuser" placeholder="Usuario" class="form-control"/>
-                        </div>
-                        
-                         <div class="form-group">
-                             <label>Clave:</label>
-                             <input type="password" name="txtpass" placeholder="Contraseña" class="form-control"/>
-                        </div>
-                        
-                        <div class="boton-container">
-                        <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block"/>
-                        </div>
-                    </form>
-            
-                </div>
-            
+                    </div>
+                </form>
             </div>
-         </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        </div>
     </body>
+
 </html>

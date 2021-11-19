@@ -15,7 +15,7 @@
     </head>
     <body>
     <container>
-        <form action="controlador?action=validar" method="POST" style="margin: auto; width: 50%">
+        <form action="ControladorLogin" method="POST" style="margin: auto; width: 50%">
             <div class="card red z-depth-3 center-align" style="border-radius:2em">
                 <div class="row">
                     <div class="col m3"></div>
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col m3"></div>
                     <div class="col m6">
-                        <input type="submit" name="txtBtn" value="Ingresar" class="btn btn-flat btn-block white-text z-depth-3">
+                        <input type="submit" name="accion" value="Ingresar" class="btn btn-flat btn-block white-text z-depth-3">
                     </div>
                     <div class="col m3"></div>
                 </div>

@@ -12,64 +12,66 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
           <link rel="stylesheet" href="resource/css/materialize.css">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+         
     </head>
-    <body>
-        <div class="container">
+    <body class="indigo lighten-5">
+        <nav class="white"></nav>
+        <br><br><br>
+            
+        <div class="container white" style="min-height: 50vh; padding: 20px">
+            <div class="row">
             <form action="controlador" method="POST">
             <div class="row">
-                <div class="col m12">
-                    <div class="card blue white-text center z-depth-2">
-                        <h3>Registro de Datos<h3/>
+                <div>
+                    <div class="card grey white-text center z-depth-2">
+                        <h5>FORMULARIO DE DATOS<h5/>
                     </div>
                 </div>
             </div>
                 <input type="hidden" value="${base.id}" name="txtID" />
-            <div class="row">
-                <div class="col m3"></div>
-                <div class="col m3">Codigo</div>
-                <div class="col m3">
+            
+                <div class="input-field col l4 col-m4">
+                    <label for="">Codigo</label>
                     <input type="text" name="txtCodigo" value="${base.codigo_patrimonio}" required=""/>
                 </div>
-            </div>
             
-             <div class="row">
-                <div class="col m3"></div>
-                <div class="col m3">Orden Compra</div>
-                <div class="col m3">
-                    <input type="text" name="txtOrden" value="${base.orden_compra}" required=""/>
+                <div class="input-field col l4 col-m4">
+                <label for="">Orden Compra</label>
+                     <input type="text" name="txtOrden" value="${base.orden_compra}" required=""/>
                 </div>
-            </div>
                 
-            <div class="row">
-                <div class="col m3"></div>
-                <div class="col m3">Serie Numero</div>
-                <div class="col m3">
+                <div class="input-field col l4 col-m4">
+                    <label>Serie Numero</label>
                     <input type="text" name="txtSerie" value="${base.serie_numero}" required=""/>
                 </div>
-            </div>
                 
-            <div class="row">
-                <div class="col m3"></div>
-                <div class="col m3">Equipo</div>
-                <div class="col m3">
+            <div class="clearfix"></div>
+           
+                
+            <div class="input-field col l4 col-m4">
+                    <label>Equipo</label>
                     <input type="text" name="txtNombre" value="${base.nombre_bien}" required=""/>
-                </div>
             </div>
                 
-            <div class="row">
-                <div class="col m3"></div>
-                <div class="col m3">Marca</div>
-                <div class="col m3">
+            <div class="input-field col l4 col-m4">
+                    <label>Marca</label>
                     <input type="text" name="txtMarca" value="${base.marca}" required=""/>
-                </div>
+            </div>
+                
+                
+            <div class="input-field col l4 col-m4">
+                    <label>Modelo</label>
+                    <input type="text" name="txtModelo" value="${base.modelo}" required=""/>
             </div>
             
-            <div class="row">
-                <div class="col m3"></div>
-                <div class="col m3">Seleccione Estado</div>
-                <div class="col m3">
+            <div class="clearfix"></div>
+                       
+            <div class="input-field col l4 col-m4">
+                    
                     <select name="cmbEstado">
-                            <option value="">Seleccionar</option>
+                            <option value="">Seleccionar Estado</option>
                         <c:forEach items="${estado}" var="es">
                             <c:choose>
                                 <c:when test="${es.idestado == base.estadodato.idestado}">
@@ -82,32 +84,50 @@
                            
                         </c:forEach>
                     </select>
-                </div>
+            </div>
+                
+            <div class="input-field col l4 col-m4">
+                    <label>Diagnostico</label>
+                    <input type="text" name="txtDiagnostico" value="${base.diagnostico}" required=""/>
             </div>
             
-            <div class="row">
-                <div class="col m3"></div>
-                <div class="col m3">Fecha</div>
-                <div class="col m3">
+            <div class="input-field col l4 col-m4">
                     <input type="date" name="txtFecha" required=""/>
-                </div>
             </div>
             
+            <div class="clearfix"></div>
+           
+            <br><br>
+            
             <div class="row">
-                <div class="col m3"></div>
-                <div class="col m3">
-                    <input type="submit" name="btnGu" value="Guardar" class="btn green black-text z-depth-2"/>
+                <div class="col m12 right-align">
+                    
+                    <button class="btn waves-effect waves-light" type="submit" name="btnGu">Guardar Datos
+                        <i class="material-icons right">save</i>
+                    </button>
+                    <a href="controlador?action=listar" class="btn waves-effect waves-light"> Cancelar
+                    <i class="material-icons right">cancel</i>
+                    </a>
+                    
+                
                 </div>
+                
+                
             </div>
             </form>
+            </div>
         </div>
        
         <script src="resource/js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="resource/js/materialize.js" type="text/javascript"></script>
+       
         <script>
              $(document).ready(function(){
                 $('select').formSelect();
              });
         </script>
+    
+       
+    
     </body>
 </html>

@@ -1,15 +1,2 @@
-config\conexion.class
-controlador\validar.class
-model\equipo.class
-model\usuarioDAO_old.class
-model\Persona.class
-model\Rol.class
-model\Usuario.class
-model\testing.class
-model\equipoDAO.class
-model\estado.class
 controlador\controlador.class
-model\usuarioDAO.class
-model\estadoDAO.class
-model\usuario_old.class
 controlador\ControladorLogin.class
